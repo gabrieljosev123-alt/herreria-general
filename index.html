@@ -1,12 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2972/2972531.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>herreria-general</title>
+    <title>Estructura Metálica en General | Forjando Calidad y Resistencia</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fuentes desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <!-- Encabezado / Navegación -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-hammer"></i> ESTRUCTURA <span>METÁLICA EN GENERAL</span>
+            </a>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto" class="btn-nav">Cotizar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero / Portada -->
+    <section id="inicio" class="hero">
+        <div class="overlay"></div>
+        <div class="container hero-content">
+            <span class="tagline">Estructuras & Forja de Alta Calidad</span>
+            <h1>ESTRUCTURA METÁLICA EN GENERAL</h1>
+            <p>Diseño, fabricación e instalación de estructuras metálicas, portones, mezanines, protecciones y herrería residencial e industrial.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/5212345678?text=Hola,%20me%20gustaría%20cotizar%20un%20trabajo%20de%20estructura%20metálica" target="_blank" class="btn btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+                </a>
+                <a href="#servicios" class="btn btn-secondary">Ver Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios con Tarjetas 3D (Flip 180°) -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Pasa el cursor sobre un servicio para revelar los detalles e imágenes del trabajo</p>
+
+            <div class="services-grid">
+
+                <!-- Servicio 1 -->
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="icon"><i class="fa-solid fa-warehouse"></i></div>
+                            <h3>Estructuras & Mezanines</h3>
+                            <p>Diseño y montaje de estructuras de acero, mezanines de carga, vigas IPR, HSS y techumbres resistentes.</p>
+                            <span class="hover-hint"><i class="fa-solid fa-rotate"></i> Pasa el cursor</span>
+                        </div>
+                        <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80');">
+                            <div class="card-back-overlay">
+                                <h3>Estructuras & Mezanines</h3>
+                                <a href="https://wa.me/5212345678?text=Hola,%20me%20interesa%20una%20estructura%20o%20mezanine" target="_blank" class="btn-card">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="icon"><i class="fa-solid fa-door-closed"></i></div>
+                            <h3>Portones & Cortinas</h3>
+                            <p>Portones contemporáneos, automatizados, cortinas metálicas ciegas o microperforadas y accesos de seguridad.</p>
+                            <span class="hover-hint"><i class="fa-solid fa-rotate"></i> Pasa el cursor</span>
+                        </div>
+                        <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80');">
+                            <div class="card-back-overlay">
+                                <h3>Portones & Cortinas</h3>
+                                <a href="https://wa.me/5212345678?text=Hola,%20me%20interesa%20un%20portón%20o%20cortina" target="_blank" class="btn-card">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h3>Protecciones & Balcones</h3>
+                            <p>Protecciones de diseño para ventanas, balcones, barandales y pasamanos con acabados de alta durabilidad.</p>
+                            <span class="hover-hint"><i class="fa-solid fa-rotate"></i> Pasa el cursor</span>
+                        </div>
+                        <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80');">
+                            <div class="card-back-overlay">
+                                <h3>Protecciones & Balcones</h3>
+                                <a href="https://wa.me/5212345678?text=Hola,%20me%20interesa%20protecciones%20o%20balcones" target="_blank" class="btn-card">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="icon"><i class="fa-solid fa-wrench"></i></div>
+                            <h3>Mantenimiento & Soldadura</h3>
+                            <p>Reparación de bisagras, soldadura de precisión, aplicación de pintura anticorrosiva y mantenimiento técnico.</p>
+                            <span class="hover-hint"><i class="fa-solid fa-rotate"></i> Pasa el cursor</span>
+                        </div>
+                        <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80');">
+                            <div class="card-back-overlay">
+                                <h3>Mantenimiento & Soldadura</h3>
+                                <a href="https://wa.me/5212345678?text=Hola,%20necesito%20mantenimiento%20o%20soldadura" target="_blank" class="btn-card">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nosotros: Reseña Extensa y Galería Técnica -->
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="about-header">
+                <span class="tagline">Ingeniería & Artesanía en Metal</span>
+                <h2 class="section-title text-light">Sobre Nuestro Trabajo Profesional</h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text-block">
+                    <h3><i class="fa-solid fa-ruler-combined"></i> Precisión Técnica y Calidad Estructural</h3>
+                    <p>En <strong>Estructura Metálica en General</strong> nos dedicamos a transformar la materia prima en soluciones estructurales de máxima resistencia y acabado arquitectónico. Cada proyecto se ejecuta siguiendo estrictos estándares técnicos: desde el cálculo de cargas y selección de perfiles (vigas IPR, canales CPS, tubos estructurales HSS y perfiles PTR) hasta el proceso final de ensamble y montaje.</p>
+                    <p>Especializados tanto en herrería pesada como en acabados finos para proyectos residenciales y comerciales, priorizamos la durabilidad frente al desgaste ambiental y la corrosión mediante el tratamiento minucioso de juntas y la aplicación de esmaltes primarios y acabados anticorrosivos de alta especificación.</p>
+                </div>
+
+                <div class="about-text-block">
+                    <h3><i class="fa-solid fa-fire-burner"></i> Procesos de Soldadura y Fabricación</h3>
+                    <p>Nuestro proceso operativo abarca el trazado de precisión, corte térmico y mecánico, biselado de piezas y soldadura continua con electrodos y sistemas SMAW/MIG adecuados según la cédula del material. Esto garantiza penetración estructural completa en empalmes de columnas, marcos de soporte para mezanines y uniones críticas de portones o marquesinas.</p>
+                    <p>Nos enfocamos en entregar un trabajo no solo sólido, sino estéticamente impecable: cordones pulidos al nivel solicitado, esquinas perfectamente alineadas a escuadra y mecanismos de apertura (bisagras de rodamiento, rieles y sistemas automatizados) ajustados para un funcionamiento suave y prolongado.</p>
+                </div>
+            </div>
+
+            <!-- Galería de Trabajo Profesional con Tarjetas de Detalles Especificos -->
+            <div class="about-gallery-title">
+                <h3>Muestra de Procesos y Proyectos Ejecutados</h3>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="gallery-info">
+                        <h4>Soldadura Estructural de Alta Penetración</h4>
+                        <p>Ensamble de marquería con proceso SMAW/MIG, inspección visual de cordones y limpieza de escoria para máxima rigidez mecánica.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="gallery-info">
+                        <h4>Estructuras y Mezanines de Carga</h4>
+                        <p>Montaje de vigas IPR con perfiles secundarios PTR y firme antideslizante, calculados para soporte de carga pesada.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="gallery-info">
+                        <h4>Herrería Residencial y Protecciones</h4>
+                        <p>Fabricación e instalación a medida de protecciones, balcones y barandales con recubrimiento anticorrosivo epóxico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estadísticas clave del taller -->
+            <div class="why-stats about-stats-margin">
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Rigurosidad Estructural</p>
+                </div>
+                <div class="stat-card">
+                    <h3>+10</h3>
+                    <p>Años de Experiencia en Trabajo Metalmecánico</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer id="contacto" class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-hammer"></i> ESTRUCTURA <span>METÁLICA EN GENERAL</span>
+                </a>
+                <p>Especialistas en herrería general y estructuras metálicas.</p>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto Directo</h4>
+                <p><i class="fa-solid fa-phone"></i> +52 12345678</p>
+                <p><i class="fa-solid fa-envelope"></i> gabrieljosev1234@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="motivational-quote">
+            <div class="container">
+                <i class="fa-solid fa-quote-left"></i>
+                <p>"El acero no toma forma por casualidad, sino por el calor del esfuerzo, la fuerza de la disciplina y la precisión de la constancia."</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Estructura Metálica en General. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/5212345678?text=Hola,%20busco%20información%20sobre%20un%20trabajo%20de%20estructura%20metálica" class="whatsapp-float" target="_blank" aria-label="Contacto por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
 </body>
 </html>
