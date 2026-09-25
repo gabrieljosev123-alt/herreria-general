@@ -1,629 +1,794 @@
-/* ==========================================================
-   RESET & VARIABLES GENERALES
-   ========================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary: #ff6b00;        /* Naranja forja */
-    --primary-hover: #e05d00;
-    --dark-bg: #121417;       /* Gris carbón */
-    --card-bg: #1a1d24;       /* Fondo oscuro para las tarjetas */
-    --light-bg: #f4f6f8;
-    --text-dark: #1f242e;
-    --text-light: #f1f5f9;
-    --text-muted: #94a3b8;
-    --font-heading: 'Oswald', sans-serif;
-    --font-body: 'Montserrat', sans-serif;
-    --transition: all 0.3s ease-in-out;
-}
-
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
-
-body {
-    font-family: var(--font-body);
-    color: var(--text-dark);
-    background-color: #ffffff;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
-
-/* ==========================================================
-   HEADER & NAVEGACIÓN
-   ========================================================== */
-.header {
-    background-color: rgba(18, 20, 23, 0.95);
-    backdrop-filter: blur(8px);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 2px solid rgba(255, 107, 0, 0.3);
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-}
-
-.logo {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    color: #ffffff;
-    font-weight: 700;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo i {
-    color: var(--primary);
-}
-
-.logo span {
-    color: var(--primary);
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav a {
-    color: var(--text-light);
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: var(--transition);
-    text-transform: uppercase;
-}
-
-.nav a:hover {
-    color: var(--primary);
-}
-
-.nav .btn-nav {
-    background: var(--primary);
-    padding: 10px 22px;
-    border-radius: 4px;
-    color: #fff;
-}
-
-.nav .btn-nav:hover {
-    background: var(--primary-hover);
-    color: #fff;
-}
-
-/* ==========================================================
-   HERO SECTION
-   ========================================================== */
-.hero {
-    height: 100vh;
-    min-height: 650px;
-    background: linear-gradient(135deg, rgba(18,20,23,0.92), rgba(18,20,23,0.78)), 
-                url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding-top: 80px;
-}
-
-.hero-content {
-    max-width: 800px;
-    color: var(--text-light);
-}
-
-.tagline {
-    color: var(--primary);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: 35px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 32px;
-    font-weight: 600;
-    border-radius: 5px;
-    transition: var(--transition);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.95rem;
-}
-
-.btn-primary {
-    background-color: #25d366;
-    color: #ffffff;
-}
-
-.btn-primary:hover {
-    background-color: #1ebc57;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    border: 2px solid var(--primary);
-    color: #ffffff;
-}
-
-.btn-secondary:hover {
-    background-color: var(--primary);
-    transform: translateY(-3px);
-}
-
-/* ==========================================================
-   SERVICIOS - EFECTO DE ROTACIÓN 180° (FLIP CARD 3D)
-   ========================================================== */
-.services {
-    padding: 100px 0;
-    background-color: var(--light-bg);
-}
-
-.section-title {
-    font-family: var(--font-heading);
-    font-size: 2.8rem;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--dark-bg);
-    margin-bottom: 10px;
-}
-
-.text-light {
-    color: #ffffff !important;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #64748b;
-    margin-bottom: 60px;
-    font-size: 1.1rem;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
-
-.card-container {
-    background-color: transparent;
-    height: 380px;
-    perspective: 1000px;
-}
-
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.card-container:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.card-front {
-    background-color: var(--card-bg);
-    color: var(--text-light);
-    padding: 40px 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-top: 4px solid var(--primary);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.card-front .icon {
-    font-size: 3rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-}
-
-.card-front h3 {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-
-.card-front p {
-    color: var(--text-muted);
-    font-size: 0.92rem;
-    line-height: 1.5;
-}
-
-.hover-hint {
-    margin-top: auto;
-    font-size: 0.75rem;
-    color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-.card-back {
-    background-size: cover;
-    background-position: center;
-    transform: rotateY(180deg);
-}
-
-.card-back-overlay {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(18, 20, 23, 0.95), rgba(18, 20, 23, 0.4));
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 30px 20px;
-}
-
-.card-back-overlay h3 {
-    font-family: var(--font-heading);
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-}
-
-.btn-card {
-    background-color: var(--primary);
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    transition: var(--transition);
-}
-
-.btn-card:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.05);
-}
-
-/* ==========================================================
-   SECCIÓN NOSOTROS
-   ========================================================== */
-.about-section {
-    padding: 110px 0 90px;
-    background-color: var(--dark-bg);
-    color: var(--text-light);
-    border-top: 1px solid rgba(255, 107, 0, 0.15);
-}
-
-.about-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.title-bar {
-    width: 80px;
-    height: 4px;
-    background-color: var(--primary);
-    margin: 15px auto 0;
-    border-radius: 2px;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.about-text-block {
-    background: var(--card-bg);
-    padding: 35px;
-    border-radius: 10px;
-    border-left: 4px solid var(--primary);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.about-text-block h3 {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.about-text-block p {
-    color: var(--text-muted);
-    font-size: 0.98rem;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.about-text-block p:last-child {
-    margin-bottom: 0;
-}
-
-.about-gallery-title {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.about-gallery-title h3 {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.gallery-card {
-    background: var(--card-bg);
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: var(--transition);
-}
-
-.gallery-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--primary);
-    box-shadow: 0 12px 25px rgba(255, 107, 0, 0.15);
-}
-
-.gallery-img {
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-}
-
-.gallery-info {
-    padding: 25px;
-}
-
-.gallery-info h4 {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.gallery-info p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.why-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.about-stats-margin {
-    margin-top: 20px;
-}
-
-.stat-card {
-    background: var(--card-bg);
-    padding: 40px 20px;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid rgba(255, 107, 0, 0.2);
-}
-
-.stat-card h3 {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    color: var(--primary);
-}
-
-.stat-card p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-}
-
-/* ==========================================================
-   FOOTER & FRASE MOTIVACIONAL
-   ========================================================== */
-.footer {
-    background-color: #0b0c0e;
-    color: var(--text-light);
-    padding-top: 60px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    padding-bottom: 50px;
-}
-
-.footer-logo p {
-    color: var(--text-muted);
-    margin-top: 15px;
-    font-size: 0.9rem;
-}
-
-.footer-contact h4 {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    color: var(--primary);
-}
-
-.footer-contact p {
-    color: var(--text-muted);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Frase Motivacional */
-.motivational-quote {
-    background: linear-gradient(90deg, #121417, #1e2229, #121417);
-    padding: 40px 0;
-    border-top: 1px solid rgba(255, 107, 0, 0.2);
-    border-bottom: 1px solid rgba(255, 107, 0, 0.2);
-    text-align: center;
-}
-
-.motivational-quote i {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 15px;
-}
-
-.motivational-quote p {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
-    color: #e2e8f0;
-    max-width: 800px;
-    margin: 0 auto;
-    font-style: italic;
-}
-
-.footer-bottom {
-    padding: 20px 0;
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-/* ==========================================================
-   BOTÓN FLOTANTE WHATSAPP
-   ========================================================== */
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 32px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    animation: pulse 2s infinite;
-}
-
-.whatsapp-float:hover {
-    background-color: #1ebc57;
-    transform: scale(1.1);
-    color: #ffffff;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
-}
-
-/* ==========================================================
-   RESPONSIVO (MÓVILES)
-   ========================================================== */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.4rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 26px;
-    }
-}
+<style>
+        /* ==========================================================
+           RESET & VARIABLES
+           ========================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff6b00;
+            --primary-hover: #e05d00;
+            --dark-bg: #121417;
+            --card-bg: #1a1d24;
+            --light-bg: #f4f6f8;
+            --text-dark: #1f242e;
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ==========================================================
+           ENCABEZADO Y NAVEGACIÓN
+           ========================================================== */
+        .header {
+            background-color: rgba(18, 20, 23, 0.95);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(255, 107, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i, .logo span {
+            color: var(--primary);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav a {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-transform: uppercase;
+        }
+
+        .nav a:hover {
+            color: var(--primary);
+        }
+
+        .nav .btn-nav {
+            background: var(--primary);
+            padding: 10px 22px;
+            border-radius: 4px;
+            color: #fff;
+        }
+
+        .nav .btn-nav:hover {
+            background: var(--primary-hover);
+        }
+
+        /* ==========================================================
+           HERO SECTION
+           ========================================================== */
+        .hero {
+            height: 100vh;
+            min-height: 650px;
+            background: linear-gradient(135deg, rgba(18,20,23,0.92), rgba(18,20,23,0.78)), 
+                        url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            color: var(--text-light);
+        }
+
+        .tagline {
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: #25d366;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #1ebc57;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ==========================================================
+           SERVICIOS CON TARJETAS FLIP
+           ========================================================== */
+        .services {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            text-align: center;
+            text-transform: uppercase;
+            color: var(--dark-bg);
+            margin-bottom: 10px;
+        }
+
+        .text-light {
+            color: #ffffff !important;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .card-container {
+            background-color: transparent;
+            height: 380px;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-container:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .card-front {
+            background-color: var(--card-bg);
+            color: var(--text-light);
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-top: 4px solid var(--primary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-front .icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .card-front h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .card-front p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .hover-hint {
+            margin-top: auto;
+            font-size: 0.75rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .card-back {
+            background-size: cover;
+            background-position: center;
+            transform: rotateY(180deg);
+        }
+
+        .card-back-overlay {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(18, 20, 23, 0.95), rgba(18, 20, 23, 0.4));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 30px 20px;
+        }
+
+        .card-back-overlay h3 {
+            font-family: var(--font-heading);
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .btn-card {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .btn-card:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.05);
+        }
+
+        /* ==========================================================
+           SECCIÓN NOSOTROS
+           ========================================================== */
+        .about-section {
+            padding: 110px 0 90px;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            border-top: 1px solid rgba(255, 107, 0, 0.15);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .title-bar {
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .about-text-block {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .about-text-block h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .about-text-block p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-gallery-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .about-gallery-title h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 25px rgba(255, 107, 0, 0.15);
+        }
+
+        .gallery-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-info {
+            padding: 25px;
+        }
+
+        .gallery-info h4 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .gallery-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .why-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 40px 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(255, 107, 0, 0.2);
+        }
+
+        .stat-card h3 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================================
+           FOOTER & FRASE
+           ========================================================== */
+        .footer {
+            background-color: #0b0c0e;
+            color: var(--text-light);
+            padding-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding-bottom: 50px;
+        }
+
+        .footer-logo p {
+            color: var(--text-muted);
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact h4 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .footer-contact p {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .motivational-quote {
+            background: linear-gradient(90deg, #121417, #1e2229, #121417);
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 107, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 107, 0, 0.2);
+            text-align: center;
+        }
+
+        .motivational-quote i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .motivational-quote p {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+            color: #e2e8f0;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .footer-bottom {
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ==========================================================
+           BOTÓN WHATSAPP
+           ========================================================== */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1ebc57;
+            transform: scale(1.1);
+            color: #ffffff;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* ==========================================================
+           RESPONSIVO
+           ========================================================== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.4rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .nav { display: none; }
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado / Navegación -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-hammer"></i> ESTRUCTURA <span>METÁLICA EN GENERAL</span>
+            </a>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto" class="btn-nav">Cotizar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Portada -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <span class="tagline">Estructuras & Forja de Alta Calidad</span>
+            <h1>ESTRUCTURA METÁLICA EN GENERAL</h1>
+            <p>Diseño, fabricación e instalación de estructuras metálicas, portones, mezanines, protecciones y herrería residencial e industrial.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/5212345678?text=Hola,%20me%20gustaría%20cotizar%20un%20trabajo%20de%20estructura%20metálica" target="_blank" class="btn btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+                </a>
+                <a href="#servicios" class="btn btn-secondary">Ver Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Pasa el cursor sobre un servicio para revelar detalles e imágenes</p>
+
+            <div class="services-grid">
+
+                <!-- Servicio 1 -->
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="icon"><i class="fa-solid fa-warehouse"></i></div>
+                            <h3>Estructuras & Mezanines</h3>
+                            <p>Diseño y montaje de estructuras de acero, mezanines de carga, vigas IPR, HSS y techumbres resistentes.</p>
+                            <span class="hover-hint"><i class="fa-solid fa-rotate"></i> Pasa el cursor</span>
+                        </div>
+                        <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80');">
+                            <div class="card-back-overlay">
+                                <h3>Estructuras & Mezanines</h3>
+                                <a href="https://wa.me/5212345678?text=Hola,%20me%20interesa%20una%20estructura%20o%20mezanine" target="_blank" class="btn-card">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="icon"><i class="fa-solid fa-door-closed"></i></div>
+                            <h3>Portones & Cortinas</h3>
+                            <p>Portones contemporáneos, automatizados, cortinas metálicas ciegas o microperforadas y accesos de seguridad.</p>
+                            <span class="hover-hint"><i class="fa-solid fa-rotate"></i> Pasa el cursor</span>
+                        </div>
+                        <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80');">
+                            <div class="card-back-overlay">
+                                <h3>Portones & Cortinas</h3>
+                                <a href="https://wa.me/5212345678?text=Hola,%20me%20interesa%20un%20portón%20o%20cortina" target="_blank" class="btn-card">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h3>Protecciones & Balcones</h3>
+                            <p>Protecciones de diseño para ventanas, balcones, barandales y pasamanos con acabados de alta durabilidad.</p>
+                            <span class="hover-hint"><i class="fa-solid fa-rotate"></i> Pasa el cursor</span>
+                        </div>
+                        <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80');">
+                            <div class="card-back-overlay">
+                                <h3>Protecciones & Balcones</h3>
+                                <a href="https://wa.me/5212345678?text=Hola,%20me%20interesa%20protecciones%20o%20balcones" target="_blank" class="btn-card">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="icon"><i class="fa-solid fa-wrench"></i></div>
+                            <h3>Mantenimiento & Soldadura</h3>
+                            <p>Reparación de bisagras, soldadura de precisión, aplicación de pintura anticorrosiva y mantenimiento técnico.</p>
+                            <span class="hover-hint"><i class="fa-solid fa-rotate"></i> Pasa el cursor</span>
+                        </div>
+                        <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80');">
+                            <div class="card-back-overlay">
+                                <h3>Mantenimiento & Soldadura</h3>
+                                <a href="https://wa.me/5212345678?text=Hola,%20necesito%20mantenimiento%20o%20soldadura" target="_blank" class="btn-card">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="about-header">
+                <span class="tagline">Ingeniería & Artesanía en Metal</span>
+                <h2 class="section-title text-light">Sobre Nuestro Trabajo Profesional</h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text-block">
+                    <h3><i class="fa-solid fa-ruler-combined"></i> Precisión Técnica y Calidad Estructural</h3>
+                    <p>En <strong>Estructura Metálica en General</strong> nos dedicamos a transformar la materia prima en soluciones estructurales de máxima resistencia y acabado arquitectónico. Cada proyecto se ejecuta siguiendo estrictos estándares técnicos: desde el cálculo de cargas y selección de perfiles (vigas IPR, canales CPS, tubos estructurales HSS y perfiles PTR) hasta el proceso final de ensamble y montaje.</p>
+                    <p>Especializados tanto en herrería pesada como en acabados finos para proyectos residenciales y comerciales, priorizamos la durabilidad frente al desgaste ambiental y la corrosión mediante el tratamiento minucioso de juntas y la aplicación de esmaltes primarios y acabados anticorrosivos de alta especificación.</p>
+                </div>
+
+                <div class="about-text-block">
+                    <h3><i class="fa-solid fa-fire-burner"></i> Procesos de Soldadura y Fabricación</h3>
+                    <p>Nuestro proceso operativo abarca el trazado de precisión, corte térmico y mecánico, biselado de piezas y soldadura continua con electrodos y sistemas SMAW/MIG adecuados según la cédula del material. Esto garantiza penetración estructural completa en empalmes de columnas, marcos de soporte para mezanines y uniones críticas de portones o marquesinas.</p>
+                    <p>Nos enfocamos en entregar un trabajo no solo sólido, sino estéticamente impecable: cordones pulidos al nivel solicitado, esquinas perfectamente alineadas a escuadra y mecanismos de apertura (bisagras de rodamiento, rieles y sistemas automatizados) ajustados para un funcionamiento suave y prolongado.</p>
+                </div>
+            </div>
+
+            <div class="about-gallery-title">
+                <h3>Muestra de Procesos y Proyectos Ejecutados</h3>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="gallery-info">
+                        <h4>Soldadura Estructural de Alta Penetración</h4>
+                        <p>Ensamble de marquería con proceso SMAW/MIG, inspección visual de cordones y limpieza de escoria para máxima rigidez mecánica.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="gallery-info">
+                        <h4>Estructuras y Mezanines de Carga</h4>
+                        <p>Montaje de vigas IPR con perfiles secundarios PTR y firme antideslizante, calculados para soporte de carga pesada.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="gallery-info">
+                        <h4>Herrería Residencial y Protecciones</h4>
+                        <p>Fabricación e instalación a medida de protecciones, balcones y barandales con recubrimiento anticorrosivo epóxico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-stats">
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Rigurosidad Estructural</p>
+                </div>
+                <div class="stat-card">
+                    <h3>+10</h3>
+                    <p>Años de Experiencia en Trabajo Metalmecánico</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-hammer"></i> ESTRUCTURA <span>METÁLICA EN GENERAL</span>
+                </a>
+                <p>Especialistas en herrería general y estructuras metálicas.</p>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto Directo</h4>
+                <p><i class="fa-solid fa-phone"></i> +52 12345678</p>
