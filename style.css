@@ -1,11 +1,11 @@
 /* ==========================================================
-   VARIABLES Y CONFIGURACIÓN BASE
+   CONFIGURACIÓN BASE & VARIABLES
    ========================================================== */
 :root {
     --primary: #ff6b00;
     --primary-hover: #e05d00;
-    --dark-bg: #0f1115;
-    --card-bg: #181b20;
+    --dark-bg: #0d0f12;
+    --card-bg: #16191e;
     --light-bg: #f8fafc;
     --text-dark: #0f172a;
     --text-light: #f1f5f9;
@@ -40,10 +40,10 @@ body {
 }
 
 /* ==========================================================
-   NAVEGACIÓN CORPORATIVA
+   EN CABEZADO
    ========================================================== */
 .header {
-    background-color: rgba(15, 17, 21, 0.95);
+    background-color: rgba(13, 15, 18, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -78,14 +78,14 @@ body {
 .nav {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 22px;
 }
 
 .nav a {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     transition: var(--transition);
 }
@@ -110,12 +110,12 @@ body {
 }
 
 /* ==========================================================
-   HERO / PORTADA B2B
+   HERO CON FONDO HD DE ALTA IMPACTO
    ========================================================== */
 .hero {
-    padding: 160px 0 100px;
-    background: linear-gradient(135deg, rgba(15,17,21,0.95), rgba(15,17,21,0.85)), 
-                url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    padding: 160px 0 90px;
+    background: linear-gradient(135deg, rgba(13,15,18,0.92), rgba(13,15,18,0.82)), 
+                url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
 }
 
 .hero-grid {
@@ -140,13 +140,13 @@ body {
 
 .hero-text h1 {
     font-family: var(--font-heading);
-    font-size: 3.2rem;
+    font-size: 3.1rem;
     line-height: 1.15;
     margin-bottom: 20px;
 }
 
 .hero-text p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-muted);
     margin-bottom: 30px;
 }
@@ -158,7 +158,7 @@ body {
 }
 
 .btn {
-    padding: 15px 30px;
+    padding: 15px 28px;
     border-radius: 5px;
     font-weight: 700;
     text-decoration: none;
@@ -199,7 +199,7 @@ body {
 
 .hero-stats-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
     color: var(--primary);
 }
@@ -214,7 +214,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
 .hero-stats-card i {
@@ -222,17 +222,47 @@ body {
 }
 
 /* ==========================================================
-   SERVICIOS B2B
+   COBERTURA GEOGRÁFICA
+   ========================================================== */
+.location-banner {
+    background: var(--primary);
+    color: #ffffff;
+    padding: 25px 0;
+}
+
+.location-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.location-icon {
+    font-size: 2.8rem;
+}
+
+.location-text h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.location-text p {
+    font-size: 0.92rem;
+    opacity: 0.95;
+}
+
+/* ==========================================================
+   SERVICIOS
    ========================================================== */
 .services-section {
-    padding: 100px 0;
+    padding: 90px 0;
     background-color: var(--light-bg);
     color: var(--text-dark);
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .sub-title {
@@ -246,6 +276,12 @@ body {
 .section-header h2 {
     font-family: var(--font-heading);
     font-size: 2.5rem;
+    margin-top: 5px;
+}
+
+.section-desc {
+    color: #64748b;
+    font-size: 0.95rem;
     margin-top: 5px;
 }
 
@@ -265,8 +301,8 @@ body {
 .service-card {
     background: #ffffff;
     border-radius: 8px;
-    padding: 40px 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    padding: 35px 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     border-top: 4px solid var(--primary);
     display: flex;
     flex-direction: column;
@@ -276,19 +312,19 @@ body {
 .service-icon {
     font-size: 2.5rem;
     color: var(--primary);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .service-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
 }
 
 .service-card p {
     color: #64748b;
-    font-size: 0.95rem;
-    margin-bottom: 30px;
+    font-size: 0.92rem;
+    margin-bottom: 25px;
 }
 
 .btn-card-wa {
@@ -312,18 +348,73 @@ body {
 }
 
 /* ==========================================================
-   SECCIÓN CURSO DIGITAL
+   ÁLBUM Y GALERÍA DE PROYECTOS
    ========================================================== */
-.course-banner {
+.gallery-section {
     padding: 90px 0;
     background: var(--dark-bg);
 }
 
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.gallery-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition);
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.gallery-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-body {
+    padding: 20px;
+}
+
+.gallery-body h4 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.gallery-body p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.gallery-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ==========================================================
+   CURSO DIGITAL
+   ========================================================== */
+.course-banner {
+    padding: 80px 0;
+    background: #111317;
+}
+
 .course-card {
-    background: linear-gradient(135deg, #1d2129, #121418);
+    background: linear-gradient(135deg, #1b1e24, #111317);
     border: 2px solid var(--primary);
     border-radius: 12px;
-    padding: 50px;
+    padding: 45px;
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
     gap: 40px;
@@ -341,14 +432,14 @@ body {
 
 .course-content h2 {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     margin-bottom: 15px;
 }
 
 .course-content p {
     color: var(--text-muted);
-    margin-bottom: 25px;
-    font-size: 0.98rem;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
 }
 
 .course-features {
@@ -371,24 +462,20 @@ body {
 .course-checkout-box {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 35px;
+    padding: 30px;
     border-radius: 8px;
     text-align: center;
 }
 
-.price-tag {
-    margin-bottom: 20px;
-}
-
 .price-tag .currency {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     font-weight: 600;
 }
 
 .price-tag .amount {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     color: #ffffff;
     font-weight: 700;
 }
@@ -396,7 +483,7 @@ body {
 .btn-buy-course {
     background: var(--primary);
     color: #ffffff;
-    padding: 16px 25px;
+    padding: 15px 20px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 700;
@@ -405,28 +492,27 @@ body {
     justify-content: center;
     gap: 10px;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     transition: var(--transition);
 }
 
 .btn-buy-course:hover {
     background: var(--primary-hover);
-    transform: scale(1.02);
 }
 
 .secure-checkout {
     display: block;
-    margin-top: 15px;
+    margin-top: 12px;
     font-size: 0.75rem;
     color: var(--text-muted);
 }
 
 /* ==========================================================
-   FOOTER & WHATSAPP FLOAT
+   FOOTER & WHATSAPP
    ========================================================== */
 .footer {
-    background: #090a0c;
-    padding: 60px 0 20px;
+    background: #08090b;
+    padding: 50px 0 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -434,19 +520,19 @@ body {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 35px;
 }
 
 .footer-col p {
     color: var(--text-muted);
-    font-size: 0.9rem;
-    margin-top: 15px;
+    font-size: 0.88rem;
+    margin-top: 12px;
 }
 
 .footer-col h4 {
     font-family: var(--font-heading);
     color: var(--primary);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 15px;
 }
 
@@ -482,14 +568,18 @@ body {
 }
 
 /* ==========================================================
-   DISEÑO RESPONSIVO
+   RESPONSIVO
    ========================================================== */
 @media (max-width: 992px) {
     .hero-grid, .course-card {
         grid-template-columns: 1fr;
     }
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
+    }
+    .location-flex {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
